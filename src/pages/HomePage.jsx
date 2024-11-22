@@ -1,12 +1,14 @@
-import { allProjects } from "../data";
-import ProjectCard from "../components/ProjectCard";
+import useTours from "../hooks/use-tours";
+import TourCard from "../components/TourCard";
 import "./HomePage.css";
 
 function HomePage() {
+  const { tours } = useTours();
+
   return (
-    <div id="project-list">
-      {allProjects.map((projectData, key) => {
-        return <ProjectCard key={key} projectData={projectData} />;
+    <div id="tours-list">
+      {tours.map((tourData, key) => {
+        return <TourCard key={key} tourData={tourData} />;
       })}
     </div>
    );
