@@ -3,11 +3,12 @@ import "./TourCard.css";
 
 function TourCard(props) {
   const { tourData } = props;
-  const tourLink = `tours/${tourData.id}`;
+  const tourLink = window.location.pathname !== "tours" ? `/tours/${tourData.id}` : `/${tourData.id}`
+
 
   return (
     <div className="tour-card">
-      <Link to={tourLink}>
+     <Link to={tourLink}>
         <img src={tourData.image} />
         <h3>{tourData.title}</h3>
       </Link>

@@ -4,8 +4,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Here we import out pages
 import HomePage from "./pages/HomePage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import TourPage from "./pages/TourPage.jsx";
+import AllToursPage from "./pages/AllToursPage.jsx";
+import BandPage from "./pages/BandPage.jsx";
+import AllBandsPage from "./pages/AllBandsPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 
 import NavBar from "./components/NavBar.jsx";
@@ -20,7 +24,11 @@ const router = createBrowserRouter([
   element: <NavBar />,
       children: [
         { path: "/", element: <HomePage /> },
+        { path: "/login", element: <LoginPage /> },
         { path: "/about", element: <AboutPage /> },
+        { path: "/bands", element: <AllBandsPage /> },
+        { path: "/bands/:id", element: <BandPage /> },
+        { path: "/tours", element: <AllToursPage /> },
         { path: "/tours/:id", element: <TourPage /> },
         { path: "/contact", element: <ContactPage /> },
       ]
