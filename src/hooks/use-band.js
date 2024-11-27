@@ -1,20 +1,17 @@
 import { useState, useEffect } from "react";
 
-import getTour from "../api/get-tour";
 import getBand from "../api/get-band";
 
-export default function useTour(tourId) {
-  const [tour, setTour] = useState();
+export default function useBand(bandId) {
+  const [band, setBand] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState();
 
   useEffect(() => {
-    if (!tourId) return
     // Here we pass the projectId to the getProject function.
-    getTour(tourId)
-      .then((tour) => {
-        console.log(tour)
-        setTour(tour);
+    getBand(bandId)
+      .then((band) => {
+        setBand(band);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -23,7 +20,7 @@ export default function useTour(tourId) {
       });
 
     // This time we pass the projectId to the dependency array so that the hook will re-run if the projectId changes.
-  }, [tourId]);
+  }, [bandId]);
 
-  return { tour, isLoading, error };
+  return { band, isLoading, error };
 }
