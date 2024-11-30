@@ -1,7 +1,7 @@
 /* Base HTML Styles */
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root {
+.root {
     --brand: #22333b;
     --action: #BB4430;
     --white: #ffffff;

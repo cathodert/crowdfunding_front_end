@@ -1,0 +1,50 @@
+
+/* .contact-form*/
+.contact-container {
+    /*background-color: var(--brand);
+    color: var(--base-dark);
+    padding: 0px 20px 10px;*/
+    margin-top: 56px;
+  }
+  
+  .contact-form {
+    background-color: var(--base-light);
+    width: auto;
+    border: solid 2px var(--brand);
+    color: var(--base-dark);
+    padding: 10px 16px;
+    gap: 28px;
+  }
+  
+  .contact-form input,
+  .contact-form select {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .contact-form textarea {
+    display: block;
+    width: 100%;
+    padding: 8px;
+  }
+  
+  .contact-form label {
+    display: block;
+    width: 100%;
+  }
+  
+  .contact-form h2 {
+    color: var(--base-dark);
+    margin-bottom: 16px;
+  }
+  
+  .contact-form input[type="Create Band"] {
+    background-color: var(--action);
+    color: var(--base-light);
+    border: 0;
+    margin-top: 8px;
+    width: 25%;
+    cursor: pointer;
+  }

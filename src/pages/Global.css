@@ -1,17 +1,13 @@
-/* Base HTML Styles
+/* Base HTML Styles */
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+.root {
+    --brand: #22333b;
+    --action: #BB4430;
+    --white: #ffffff;
+    --base-light: #eae0d5;
+    --base-dark: #0A0908;
+    --black: #111111;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family:"Metal Mainia", serif;
-}
-
-p {
-  font-family:"Montserrat", serif;
-} */
 
