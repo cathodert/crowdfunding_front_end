@@ -5,7 +5,6 @@ import "./HomePage.css";
 
 function HomePage() {
   const { tours } = useTours();
-  // const { bands } = useBands():
 
   return (
     <div>

@@ -1,6 +1,6 @@
 import useTours from "../hooks/use-tours";
 import TourCard from "../components/TourCard";
-import "./Global.css";
+import "./pages.css";
 
 function AllToursPage() {
   const { tours } = useTours();

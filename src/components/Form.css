@@ -1,25 +1,27 @@
 
 /* .contact-form*/
 .contact-container {
-    /*background-color: var(--brand);
+    /* background-color: var(--brand);
     color: var(--base-dark);
-    padding: 0px 20px 10px;*/
-    margin-top: 56px;
+    padding: 0px 20px 10px; */
+    margin: 14px;
   }
   
-  .contact-form {
+  .band-form {
+
     background-color: var(--base-light);
     width: auto;
     border: solid 2px var(--brand);
     color: var(--base-dark);
-    padding: 10px 16px;
+    padding: 10px;
     gap: 28px;
   }
+
   
   .contact-form input,
   .contact-form select {
     display: block;
-    width: 100%;
+    width: 95%;
     padding: 8px;
     margin-bottom: 16px;
   }
@@ -48,3 +50,5 @@
     width: 25%;
     cursor: pointer;
   }
+
+

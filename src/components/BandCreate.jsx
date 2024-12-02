@@ -7,14 +7,15 @@ import postBand from "../api/post-band.js";
 function CreateBand() {
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({
-        bandName: '',
+        name: '',
         country: '',
         description: '',
         cover_image: '',
-        url: ''
+        website: ''
     });
         
     const handleChange = (event) => {
+        console.log(event.target.name)         
         const name = event.target.name;
         const value = event.target.value
         setInputs(values => ({...values, [name]: value}))
@@ -22,11 +23,12 @@ function CreateBand() {
 
     const handleSubmit= async (event) => {
         event.preventDefault();
+        // TODO need to add authentication
         try {
             const result = await postBand(inputs);
             console.log("Success:", result);
-            // navigate("/bands/${bandId}")
-            navigate("/")
+            navigate("/bands/${bandId}")
+            // navigate("/")
         }   catch (error) {
             console.error("Create band failed:", error)
         }
@@ -34,12 +36,13 @@ function CreateBand() {
 
 
     return (
+        <div className="band-form">
         <form>
             <div>
-                <label htmlFor="bandName">Band name:</label>
+                <label htmlFor="name">Band name:</label>
                 <input
                     type="text" 
-                    name="bandName"
+                    name="name"
                     value={inputs.bandName} 
                     onChange={handleChange}
                 />
@@ -54,16 +57,16 @@ function CreateBand() {
                     />
             </div>
             <div>
-                <label htmlFor="bandDescription">Band description:</label>
+                <label htmlFor="description">Band description:</label>
                 <input
                     type="text" 
-                    name="bandDescription" 
+                    name="description" 
                     value={inputs.description} 
                     onChange={handleChange}
                 />
             </div>
             <div>
-                <label htmlFor="bandImage">Band cover image:</label>
+                <label htmlFor="cover_image">Band cover image:</label>
                 <input
                     type="url" 
                     name="cover_image" 
@@ -72,7 +75,7 @@ function CreateBand() {
                 />
             </div>
             <div>
-                <label htmlFor="bandWebsite">Band website:</label>
+                <label htmlFor="website">Band website:</label>
                 <input
                     type="url" 
                     name="website" 
@@ -84,7 +87,8 @@ function CreateBand() {
                 Create Band
             </button>
             </form>
-            );
-        }
-   
-        export default CreateBand;
+
+
+        </div>)}
+
+        export default CreateBand

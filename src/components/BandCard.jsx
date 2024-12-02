@@ -8,7 +8,8 @@ function BandCard(props) {
   return (
     <div className="band-card">
       <Link to={bandLink}>
-        <img src={bandData.image} />
+        <img src={bandData.image} 
+        />
         <h3>{bandData.name}</h3>
       </Link>
     </div>

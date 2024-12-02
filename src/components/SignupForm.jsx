@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import postSignup from "../api/post-signup.js";
+import postLogin from "../api/post-login.js";
 
 function SignupForm() {
     const navigate = useNavigate();
@@ -21,18 +22,43 @@ function SignupForm() {
         setInputs(values => ({...values, [name]: value}))
     };
 
-    const handleSubmit= async (event) => {
-        event.preventDefault();
-        try {
-            const result = await postSignup(inputs);
-            console.log("Success:", result);
-            navigate("/")
-        }   catch (error) {
-            console.error("Signup failed:", error)
-        }
-        }
-        console.log(inputs)
-    return (
+    // const handleSubmit= async (event) => {
+    //     event.preventDefault();
+    //       const result = await postSignup(inputs);
+    //       console.log("Success:", result);}
+    //       // if (inputs.username && inputs.password) {
+    //           postLogin(
+    //               inputs.username,
+    //               inputs.password
+    //           ).then((response) => {
+    //               window.localStorage.setItem("token", response.token);
+    //               setAuth ({
+    //                   token: response.token,
+    //               })
+    //               navigate("/");})
+
+                
+        // }   catch (error) {
+        //     console.error("Signup failed:", error)
+        // }
+        
+        // console.log(inputs)
+    
+        const handleSubmit= async (event) => {
+          event.preventDefault();
+          try {
+              const result = await postSignup(inputs);
+              console.log("Success:", result);
+              navigate("/")
+          }   catch (error) {
+              console.error("Signup failed:", error)
+          }
+          }
+          console.log(inputs)
+        
+    
+    
+     return (
       <form>
         <div>
           <label htmlFor="first_name">First name:</label>
