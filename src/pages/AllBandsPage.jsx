@@ -9,22 +9,21 @@ import "../components/Form.css"
 function AllBandsPage() {
   const { bands } = useBands();
   const[displayForm, setDisplayForm] = useState(false)  
+  const showForm = () => {setDisplayForm(true)}
 
   return (
     <div>
         <div className="hero">
         <h1>Our bandtogethr bands</h1>
         </div>
-        <div className="contact-form">
-          <CreateBand />
-        </div>
-        <div className="display-form"  onClick={() => {
-        setDisplayForm(!displayForm)
-       }}>
-        <button type="Display-form">
+        <div className="display-form"> 
+       { !displayForm ? <button type="Display-form" onClick={showForm}>
                 Add a new band
-            </button>
+            </button> : null}
             </div>
+        <div className="contact-form">
+          {displayForm ? <CreateBand /> : null}
+        </div>
         <div id="band-list">
             {bands.map((bandData, key) => {
                 return <BandCard key={key} bandData={bandData} />;

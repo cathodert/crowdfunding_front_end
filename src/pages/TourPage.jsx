@@ -21,8 +21,11 @@ function TourPage() {
   return (
       <div>
         <div className="hero">
-          <h2>{tour.title}</h2>
+          <h1>{tour.title}</h1>
         </div>
+        <h3>{tour.band}</h3>
+        <h3>Description</h3>
+        <p>{tour.description}</p>
         <h3>Created at: {tour.date_created}</h3>
         <h3>{`Status: ${tour.is_open}`}</h3>
         <h3>Pledges:</h3>

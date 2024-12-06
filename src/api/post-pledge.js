@@ -1,5 +1,5 @@
-async function postTour(inputs, token) {
-    const url = `${import.meta.env.VITE_API_URL}/tours/`;
+async function postPledge(inputs, token) {
+    const url = `${import.meta.env.VITE_API_URL}/pledges/`;
 
     const response = await fetch(url, {
         method: "POST", // We need to tell the server that we are sending JSON data so we set the Content-Type header to application/json
@@ -8,20 +8,17 @@ async function postTour(inputs, token) {
           "Authorization": `Token ${token}`
         },
         body: JSON.stringify({
-          genre: [1],
-          title: inputs.title,
-          description: inputs.description,
-          goal: inputs.goal,
-          image: inputs.image,
-          is_open: true,
-          band: 37
+          amount: inputs.amount,
+          comment: inputs.comment,
+          tour: `${tour.id}`,
+          band: `${band.id}`,            
         }
 
         ),
       });
     
       if (!response.ok) {
-        const fallbackError = `Error trying to create tour`;
+        const fallbackError = `Error trying to create pledge`;
     
         const data = await response.json().catch(() => {
           throw new Error(fallbackError);
@@ -34,4 +31,4 @@ async function postTour(inputs, token) {
       return await response.json();
     }
 
-    export default postTour
+    export default postPledge

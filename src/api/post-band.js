@@ -1,17 +1,19 @@
-async function postBand(inputs) {
+async function postBand(inputs, token) {
     const url = `${import.meta.env.VITE_API_URL}/bands/`;
 
     const response = await fetch(url, {
         method: "POST", // We need to tell the server that we are sending JSON data so we set the Content-Type header to application/json
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Token ${token}`
         },
         body: JSON.stringify({
-          name: '',
-          country: '',
-          description: '',
-          cover_image: '',
-          website: ''
+          name: inputs.name,
+          country: inputs.country,
+          description: inputs.description,
+          cover_image: inputs.cover_image,
+          website: inputs.website,
+          genre: [1]
         }
 
         ),

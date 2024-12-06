@@ -20,14 +20,16 @@
     return (
         <div>
           <div className="hero">
-            <h1>{`Band name: ${band.name}`}</h1>
+            <h1>{`${band.name}`}</h1>
           </div>
           <div>
             <h2>About</h2>
             <p>{band.description}</p>
-            <h2>Band details</h2>
-            <h3>Origin: {band.country}</h3>
-            <h3>Genre: {`${band.genre}`}</h3>
+            <h3>Country</h3>
+            <p>{band.country}</p>
+            <h3>Website</h3>
+            <p> <a href="`{band.website}">{band.website}</a></p>
+            {/* <h3>Genre: {`${band.genre}`}</h3> */}
           </div>
         </div>
     

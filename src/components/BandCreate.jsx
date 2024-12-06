@@ -2,9 +2,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Form.css"
 import postBand from "../api/post-band.js";
+import {useAuth} from "../hooks/use-auth.js"; 
 
 
 function CreateBand() {
+    const {auth, setAuth} = useAuth();
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({
         name: '',
@@ -23,11 +25,12 @@ function CreateBand() {
 
     const handleSubmit= async (event) => {
         event.preventDefault();
+        console.log("Logging token", auth.token)
         // TODO need to add authentication
         try {
-            const result = await postBand(inputs);
+            const result = await postBand(inputs, auth.token);
             console.log("Success:", result);
-            navigate("/bands/${bandId}")
+            navigate(`/bands/${result.id}`)
             // navigate("/")
         }   catch (error) {
             console.error("Create band failed:", error)

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 import postLogin from "../api/post-login.js";
 import{ useAuth } from "../hooks/use-auth.js";
 
@@ -18,6 +19,7 @@ function LoginForm() {
         setCredentials((prevCredentials) => ({
             ...prevCredentials,
             [id]: value,
+            
         }));
     };
  
@@ -38,7 +40,7 @@ function LoginForm() {
         };
 
     return (
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
             <input
@@ -57,7 +59,7 @@ function LoginForm() {
                 onChange={handleChange}
             />
         </div>
-        <button type="submit" onClick={handleSubmit}>
+        <button type="submit">
             Login
         </button>
       </form>
