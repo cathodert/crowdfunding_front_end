@@ -9,6 +9,13 @@ export default function useBand(bandId) {
 
   useEffect(() => {
     // Here we pass the projectId to the getProject function.
+    if (!bandId) {
+      // console.log("No bandID provided");
+      setIsLoading(false);
+      return
+    }
+    console.log(band)
+    
     getBand(bandId)
       .then((band) => {
         setBand(band);

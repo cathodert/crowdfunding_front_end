@@ -19,7 +19,6 @@ function LoginForm() {
         setCredentials((prevCredentials) => ({
             ...prevCredentials,
             [id]: value,
-            
         }));
     };
  
