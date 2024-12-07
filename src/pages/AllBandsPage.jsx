@@ -3,7 +3,7 @@ import BandCard from "../components/BandCard";
 import CreateBand from "../components/BandCreate";
 import { useState } from "react";
 
-import "./pages.css";
+import "./Pages.css";
 import "../components/Form.css"
 
 function AllBandsPage() {
