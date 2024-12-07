@@ -8,10 +8,12 @@ async function postPledge(inputs, token) {
           "Authorization": `Token ${token}`
         },
         body: JSON.stringify({
+          supporter: 2,
           amount: inputs.amount,
           comment: inputs.comment,
-          tour: `${tour.id}`,
-          band: `${band.id}`,            
+          anonymous: false,
+          tour: inputs.tour,
+          band: inputs.band,            
         }
 
         ),

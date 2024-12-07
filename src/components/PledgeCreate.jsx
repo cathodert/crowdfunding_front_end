@@ -1,21 +1,29 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Form.css"
 import postPledge from "../api/post-pledge.js";
 import {useAuth} from "../hooks/use-auth.js"; 
+import useBand from "../hooks/use-band.js";
+import useTour from "../hooks/use-tour.js";
+import { useEffect } from "react";
 
 
-function CreatePledge() {
+function CreatePledge (props) {
+    const { id } = useParams();
     const {auth, setAuth} = useAuth();
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({
-        supporter: '',
+        supporter: 2,
         amount: '',
         comment: '',
-        // tour: `${tour.id}`,
-        // band: `${band.id}`, 
+        anonymous: false,
+        tour: id,
+        band: props.bandId, 
     });
-        
+
+      
+      console.log(inputs)
+      console.table(props.bandId)
     const handleChange = (event) => {
         console.log(event.target.name)         
         const name = event.target.name;
@@ -62,8 +70,8 @@ function CreatePledge() {
                 <label htmlFor="comment">Supporter comment:</label>
                 <input
                     type="text" 
-                    name="description" 
-                    value={inputs.description} 
+                    name="comment" 
+                    value={inputs.comment} 
                     onChange={handleChange}
                 />
             </div>

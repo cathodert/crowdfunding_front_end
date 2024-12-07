@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useTour from "../hooks/use-tour";
 import useBand from "../hooks/use-band";
 // import { useEffect } from "react";
+import CreatePledge from "../components/PledgeCreate";
 
 
 
@@ -54,7 +55,7 @@ function TourPage() {
                 })}
             </ul>
           <div className="contact-form">
-          <CreatePledge/> 
+          <CreatePledge bandId={bandId}/> 
           </div>
         </div>
         

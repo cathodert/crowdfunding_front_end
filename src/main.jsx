@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 // import SignupPage from "./pages/SignupPage.jsx";
-import AboutPage from "./pages/AboutPage.jsx";
+// import AboutPage from "./pages/AboutPage.jsx";
 import TourPage from "./pages/TourPage.jsx";
 import AllToursPage from "./pages/AllToursPage.jsx";
 import BandPage from "./pages/BandPage.jsx";
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         { path: "/", element: <HomePage /> },
         { path: "/login", element: <LoginPage /> },
         // { path: "/signup", element: <SignupPage /> },
-        { path: "/about", element: <AboutPage /> },
+        // { path: "/about", element: <AboutPage /> },
         { path: "/bands", element: <AllBandsPage /> },
         { path: "/bands/:id", element: <BandPage /> },
         { path: "/tours", element: <AllToursPage /> },
