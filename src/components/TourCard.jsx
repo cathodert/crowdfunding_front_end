@@ -10,7 +10,7 @@ function TourCard(props) {
     <div className="tour-card">
      <Link to={tourLink}>
         <img src={tourData.image} />
-        <h3>{tourData.title}</h3>
+        <h3 className="text">{tourData.title}</h3>
       </Link>
     </div>
   );

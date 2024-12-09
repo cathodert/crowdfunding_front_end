@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import embedImage from "./EmbedImage";
 import "./BandCard.css";
 
 function BandCard(props) {
@@ -8,7 +9,9 @@ function BandCard(props) {
   return (
     <div className="band-card">
       <Link to={bandLink}>
-        <img src={bandData.image} 
+        {/* <img src={bandData.image}
+        /> */}
+        <img src={bandData.cover_image}
         />
         <h3>{bandData.name}</h3>
       </Link>

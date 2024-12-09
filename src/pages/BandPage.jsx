@@ -3,6 +3,9 @@
   import useBand from "../hooks/use-band";
   import useOwner from "../hooks/use-owner";
   import CreateTour from "../components/TourCreate";
+  import embedImage from "../components/EmbedImage";
+  import HeroSection from "../components/hero";
+  import HeroImage from "../img/hero-band-yellow.png"
 
   
   function BandPage() {
@@ -38,13 +41,18 @@
     // if (userError) {
     //   return (<p>{userError.message}</p>)
     //   }
-
+    const homeText = {
+      title: `${band.name}`
+    }
 
     return (
         <div>
-          <div className="hero">
+            <div>
+              <HeroSection backgroundImage={HeroImage} textContent={homeText}/>
+            </div>
+          {/* <div className="hero">
             <h1>{`${band.name}`}</h1>
-          </div>
+          </div> */}
           <div>
             <h2>About</h2>
             <p>{band.description}</p>
@@ -54,6 +62,11 @@
             <h3>Website</h3>
             <p> <a href="`{band.website}">{band.website}</a></p>
             {/* <h3>Genre: {`${band.genre}`}</h3> */}
+          </div>
+          <div>
+          <img src={band.cover_image}
+          />
+          {/* <img src="https://1drv.ms/i/s!AkTRpRZDPOFCiQ7XS_u9Py14T-1C?embed=1&width=450&height=450"/> */}
           </div>
           <div className="display-form"> 
               { !displayForm ? <button type="Display-form" onClick={showForm}>
