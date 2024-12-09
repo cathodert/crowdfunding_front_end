@@ -1,6 +1,9 @@
 import { useParams } from "react-router-dom";
 import useTour from "../hooks/use-tour";
 import useBand from "../hooks/use-band";
+import HeroSection from "../components/hero";
+import HeroImage from "../img/hero-red.png"
+import CreatePledge from "../components/PledgeCreate";
 // import { useEffect } from "react";
 
 
@@ -32,10 +35,13 @@ function TourPage() {
     return (<p>{bandError.message}</p>)
     }
 
+  const homeText = {
+      title: `${tour.title}`
+    }
     return (
         <div>
-          <div className="hero">
-            <h1>{tour.title}</h1>
+          <div>
+             <HeroSection backgroundImage={HeroImage} textContent={homeText}/>
           </div>
           <h3>Band:</h3>
           <p>{band?.name}</p>
