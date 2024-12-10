@@ -5,7 +5,7 @@ import HeroSection from "../components/hero";
 import HeroImage from "../img/hero-red.png"
 import CreatePledge from "../components/PledgeCreate";
 // import { useEffect } from "react";
-import CreatePledge from "../components/PledgeCreate";
+
 
 
 
