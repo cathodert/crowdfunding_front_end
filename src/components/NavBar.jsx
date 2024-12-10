@@ -36,9 +36,9 @@ function NavBar() {
             <NavLink to="/login">Login</NavLink>
           )}
           </li>
-          {/* <li>
+          <li>
             <NavLink to="/about">About</NavLink>
-          </li> */}
+          </li>
           <li>
             <NavLink to="/bands">Bands</NavLink>
           </li>

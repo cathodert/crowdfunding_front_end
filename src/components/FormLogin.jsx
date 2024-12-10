@@ -39,6 +39,7 @@ function LoginForm() {
         };
 
     return (
+      <div className="login-form">
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
@@ -46,6 +47,7 @@ function LoginForm() {
                 type="text"
                 id="username"
                 placeholder="Enter username"
+                required
                 onChange={handleChange}
             />
         </div>
@@ -55,13 +57,15 @@ function LoginForm() {
                 type="password"
                 id="password"
                 placeholder="Password"
+                required
                 onChange={handleChange}
             />
         </div>
-        <button type="submit">
+        <button type="submit" className="submit">
             Login
         </button>
       </form>
+      </div>
     );
   }
   

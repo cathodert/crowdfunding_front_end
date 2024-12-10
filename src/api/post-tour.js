@@ -14,7 +14,7 @@ async function postTour(inputs, token) {
           goal: inputs.goal,
           image: inputs.image,
           is_open: true,
-          band: 37
+          band: 67
         }
 
         ),

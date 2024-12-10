@@ -9,9 +9,10 @@ export const AuthProvider = (props) => {
   const [auth, setAuth] = useState({
     // Here we initialize the context with the token from local storage, this way if the user refreshes the page we can still have the token in memory.
     token: window.localStorage.getItem("token"),
-    // userId: window.localStorage.getItem("userId"),
-    // email: window.localStorage.getItem("email")    
+    userId: window.localStorage.getItem("userId"),
+    email: window.localStorage.getItem("email")    
   });
+  console.log(props)
 
   return (
     <AuthContext.Provider value={{ auth, setAuth }}>
