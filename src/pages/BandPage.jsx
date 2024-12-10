@@ -4,7 +4,7 @@
   import useOwner from "../hooks/use-owner";
   import CreateTour from "../components/TourCreate";
   import embedImage from "../components/EmbedImage";
-  import HeroSection from "../components/hero";
+  import HeroSection from "../components/Hero";
   import HeroImage from "../img/hero-band-yellow.png"
 
   

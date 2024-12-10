@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import useTour from "../hooks/use-tour";
 import useBand from "../hooks/use-band";
-import HeroSection from "../components/hero";
+import HeroSection from "../components/Hero";
 import HeroImage from "../img/hero-red.png"
 import CreatePledge from "../components/PledgeCreate";
 // import { useEffect } from "react";

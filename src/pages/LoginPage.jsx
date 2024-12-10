@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SignupForm from "../components/SignupForm";
 import LoginForm from "../components/FormLogin";
-import HeroSection from "../components/hero";
+import HeroSection from "../components/Hero";
 import HeroImage from "../img/hero-blue.png"
 import "./Pages.css"
 import "../components/Form.css"

@@ -2,7 +2,7 @@ import useTours from "../hooks/use-tours";
 import TourCard from "../components/TourCard";
 import CreateTour from "../components/TourCreate";
 import { useState } from "react";
-import HeroSection from "../components/hero";
+import HeroSection from "../components/Hero";
 import HeroImage from "../img/hero-blue.png"
 import "./Pages.css";
 import "../components/Form.css"

@@ -2,7 +2,7 @@ import useTours from "../hooks/use-tours";
 // import useBands from "../hooks/use-bands";
 import TourCard from "../components/TourCard";
 import "./Pages.css";
-import HeroSection from "../components/hero";
+import HeroSection from "../components/Hero";
 import HeroImage from "../img/hero-yellow.png"
 
 function HomePage() {

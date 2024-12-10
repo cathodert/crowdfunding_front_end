@@ -2,7 +2,7 @@ import useBands from "../hooks/use-bands";
 import BandCard from "../components/BandCard";
 import CreateBand from "../components/BandCreate";
 import { useState } from "react";
-import HeroSection from "../components/hero";
+import HeroSection from "../components/Hero";
 import HeroImage from "../img/hero-band-yellow.png"
 import "./Pages.css";
 import "../components/Form.css"
