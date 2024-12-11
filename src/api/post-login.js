@@ -21,8 +21,17 @@ async function postLogin(username, password) {
       const errorMessage = data?.detail ?? fallbackError;
       throw new Error(errorMessage);
     }
-  
-    return await response.json();
-  }
+    
+    // return await response.json();
+
+    const data = await response.json();
+    console.log(data);
+    return {
+      token: data.token,
+      user_id: data.user_id,
+      email: data.email,
+
+  };
+}
   
   export default postLogin;

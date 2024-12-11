@@ -26,28 +26,6 @@ function SignupForm() {
       const value = event.target.value;
       setInputs(values => ({...values, [name]: value}))
   };
-
-    // const handleSubmit= async (event) => {
-    //     event.preventDefault();
-    //       const result = await postSignup(inputs);
-    //       console.log("Success:", result);}
-    //       // if (inputs.username && inputs.password) {
-    //           postLogin(
-    //               inputs.username,
-    //               inputs.password
-    //           ).then((response) => {
-    //               window.localStorage.setItem("token", response.token);
-    //               setAuth ({
-    //                   token: response.token,
-    //               })
-    //               navigate("/");})
-
-                
-        // }   catch (error) {
-        //     console.error("Signup failed:", error)
-        // }
-        
-        // console.log(inputs)
     
     const handleSubmit= async (event) => {
       event.preventDefault();

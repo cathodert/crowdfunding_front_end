@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import getUser from "../api/get-user";
 
 // Here we create the Context
 export const AuthContext = createContext();
@@ -9,8 +10,8 @@ export const AuthProvider = (props) => {
   const [auth, setAuth] = useState({
     // Here we initialize the context with the token from local storage, this way if the user refreshes the page we can still have the token in memory.
     token: window.localStorage.getItem("token"),
-    userId: window.localStorage.getItem("userId"),
-    email: window.localStorage.getItem("email")    
+    // id: window.localStorage.getItem("id"),
+    // user_type: window.localStorage.getItem("user_type")    
   });
   console.log(props)
 
