@@ -32,10 +32,11 @@ function SignupForm() {
       try {
           const result = await postSignup(inputs);
           console.log("Success:", result);
-          navigate("/")
+          navigate("/login")
       }   catch (error) {
           console.error("Signup failed:", error)
       }
+
       }
       console.log(inputs)
         

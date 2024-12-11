@@ -23,28 +23,6 @@ function LoginForm() {
         }));
     };
  
-    // const handleSubmit = (event) => {
-    //         event.preventDefault();
-    //         if (credentials.username && credentials.password) {
-    //             postLogin(
-    //                 credentials.username,
-    //                 credentials.password
-    //             ).then((response) => {
-    //                 window.localStorage.setItem("token", response.token);
-    //                 window.localStorage.setItem("id", response.id);
-    //                 window.localStorage.setItem("user_type", response.user_type);
-  
-    //                 setAuth ({
-    //                     token: response.token,
-    //                     id: response.id,
-    //                     user_type:response.user_type
-    //                 })
-    //                 navigate("/");
-    //             }).catch((error) => { 
-    //                 console.error('Login failed:', error);
-    //         });
-    //     };
-    // }
     const handleSubmit = (event) => { 
         event.preventDefault(); 
         if (credentials.username && credentials.password) { 

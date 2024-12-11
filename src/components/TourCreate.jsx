@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Form.css"
 import postTour from "../api/post-tour.js";
 import {useAuth} from "../hooks/use-auth.js"; 
+import useBand from "../hooks/use-band.js";
 
 
-function CreateTour() {
+function CreateTour(props) {
+    const { id } = useParams();
     const {auth, setAuth} = useAuth();
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({
@@ -13,8 +15,8 @@ function CreateTour() {
         description: '',
         goal: '',
         image: '',
-        // is_open: '',
-        // band: '',
+        is_open: true,
+        band: id,
     });
         
     const handleChange = (event) => {

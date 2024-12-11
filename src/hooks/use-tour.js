@@ -9,8 +9,15 @@ export default function useTour(tourId) {
   const [error, setError] = useState();
 
   useEffect(() => {
-    if (!tourId) return
-    // Here we pass the projectId to the getProject function.
+    // if (!tourId) return
+
+    if (!tourId) {
+      console.log("No tourId provided");
+      setIsLoading(false);
+      return
+    }
+    console.log(tour)  
+
     getTour(tourId)
       .then((tour) => {
         console.log(tour)
@@ -22,7 +29,6 @@ export default function useTour(tourId) {
         setIsLoading(false);
       });
 
-    // This time we pass the projectId to the dependency array so that the hook will re-run if the projectId changes.
   }, [tourId]);
 
   return { tour, isLoading, error };
