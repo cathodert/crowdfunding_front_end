@@ -1,5 +1,9 @@
-async function putTour(tourId, token, tourData) {
-    const url = `${import.meta.env.VITE_API_URL}/tours/${tourId}`;
+async function putTour(token, tourId, tourData) {
+    // const url = `${import.meta.env.VITE_API_URL}/tours/${tourId}/`;
+    const url = `https://bandtogethr-e2b0af362861.herokuapp.com/tours/133`
+    console.log("PUT URL:", url);
+    console.log("Tour Data:", tourData);
+
     const response = await fetch(url, {
         method: "PUT", // We need to tell the server that we are sending JSON data so we set the Content-Type header to application/json
         headers: {

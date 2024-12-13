@@ -29,7 +29,6 @@ function CreateTour(props) {
     const handleSubmit= async (event) => {
         event.preventDefault();
         console.log("Logging token", auth.token)
-        // TODO need to add authentication
         try {
             const result = await postTour(inputs, auth.token);
             console.log("Success:", result);

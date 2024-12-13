@@ -3,22 +3,24 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./Form.css"
 import getTour from "../api/get-tour.js";
 import {useAuth} from "../hooks/use-auth.js"; 
+import useTour from "../hooks/use-tour.js";
 import useBand from "../hooks/use-band.js";
 import putTour from "../api/put-tour.js";
 
 
-function UpdateTour(props) {
+function UpdateTour() {
     const { id } = useParams();
+    const tourId = id;
     const {auth, setAuth} = useAuth();
     const navigate = useNavigate();
-    const [tourData, updateTourData] = useState({
+    const [tourData, setTourData] = useState({
         tour: id,
         title: "",
         description: "",
         goal: "",
         image: "",
         is_open: true,
-        band: props.id,
+        // band: props.id,
     });
     
     useEffect(() => { 
@@ -30,10 +32,14 @@ function UpdateTour(props) {
     }, [id]);
     
     const handleChange = (event) => {
-        console.log(event.target.name)         
-        const name = event.target.name;
-        const value = event.target.value
-        setTourData(values => ({...values, [name]: value}))
+        console.log(event.target.name)   
+        const {name, value} = event.target;      
+        // const name = event.target.name;
+        // const value = event.target.value
+        setTourData((prevData) => ({
+            ...prevData, 
+            [name]: value,
+        }))
     };
 
     const handleSubmit= async (event) => {
@@ -41,9 +47,9 @@ function UpdateTour(props) {
         console.log("Logging token", auth.token)
         // TODO need to add authentication
         try {
-            const result = await putTour(tourData, auth.token);
+            const result = await putTour(id, tourData, auth.token);
             console.log("Success:", result);
-            navigate(`/tours/${result.id}`)
+            navigate(`/tours/${id}`)
             // navigate("/")
         }   catch (error) {
             console.error("Update tour failed:", error)
@@ -59,7 +65,7 @@ function UpdateTour(props) {
                 <input
                     type="text" 
                     name="title"
-                    // value={tourData.title} 
+                    value={tourData.title} 
                     onChange={handleChange}
                 />
             </div>
@@ -77,7 +83,7 @@ function UpdateTour(props) {
                 <input
                     type="text" 
                     name="description" 
-                    // value={tourData.description} 
+                    value={tourData.description} 
                     onChange={handleChange}
                 />
             </div>
@@ -86,7 +92,7 @@ function UpdateTour(props) {
                 <input
                     type="number" 
                     name="goal" 
-                    // value={tourData.goal} 
+                    value={tourData.goal}
                     onChange={handleChange}
                 />
             </div>
@@ -95,7 +101,7 @@ function UpdateTour(props) {
                 <input
                     type="url" 
                     name="image" 
-                    // value={tourData.image} 
+                    value={tourData.image} 
                     onChange={handleChange}
                 />
             </div>

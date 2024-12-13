@@ -67,9 +67,9 @@ function TourPage() {
           <div className="contact-form">
           <CreatePledge bandId={bandId}/> 
           </div>
-          {/* <div className="contact-form">
+          <div className="contact-form">
           <UpdateTour/> 
-          </div> */}
+          </div>
         </div>
         
       );
