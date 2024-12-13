@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import embedImage from "./EmbedImage";
 import "./BandCard.css";
+import ImagePlaceholder from "../img/image-placeholder.png";
+import ImageWithFallback from "./ImageError";
 
 function BandCard(props) {
   const { bandData } = props;
@@ -9,9 +10,10 @@ function BandCard(props) {
   return (
     <div className="band-card">
       <Link to={bandLink}>
-        {/* <img src={bandData.image}
-        /> */}
-        <img src={bandData.cover_image}
+      <ImageWithFallback
+          src={bandData.cover_image}
+          alt="Band cover image"
+          placeholder={ImagePlaceholder}
         />
         <h3>{bandData.name}</h3>
       </Link>

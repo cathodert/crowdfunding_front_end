@@ -1,8 +1,8 @@
-# React + Vite
+# Crowdfunding Front End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+bandtogthr is a platform to raise funds to get international metal bands to include Perth on their tour downunder.
 
-Currently, two official plugins are available:
+The deployed bandtogethr website <https://bandtogethr.netlify.app/>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Project background and back end on GitHub <https://github.com/cathodert/crowdfunding_back_end>
+Deployed backend on heroku <https://bandtogethr-e2b0af362861.herokuapp.com>
