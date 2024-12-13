@@ -31,7 +31,7 @@ function LoginForm() {
                 window.localStorage.setItem("token", response.token); 
                 window.localStorage.setItem("user_id", response.user_id); 
                 window.localStorage.setItem("email", response.email); 
-                
+                // add band
                 setAuth({ 
                     token: response.token, 
                     user_id: response.user_id, 

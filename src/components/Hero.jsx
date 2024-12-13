@@ -7,7 +7,7 @@ const HeroSection = ({ backgroundImage, textContent, heroLink }) => {
             <h1>{textContent.title}</h1>
             <p>{textContent.subtitle}</p>
             <a href={heroLink} className="hero-button-link">
-                <button className="hero-button">{textContent.button}</button>
+            <button className="hero-button">{textContent.button}</button>
                 </a>
         </div>
     );

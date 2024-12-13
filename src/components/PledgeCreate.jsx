@@ -13,7 +13,6 @@ function CreatePledge (props) {
     const {auth, setAuth} = useAuth();
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({
-        supporter: 2,
         amount: '',
         comment: '',
         anonymous: false,

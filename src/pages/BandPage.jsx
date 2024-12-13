@@ -1,21 +1,27 @@
   import { useParams } from "react-router-dom";
-  import { useState } from "react";
+  import { useState, useEffect } from "react";
   import useBand from "../hooks/use-band";
-  import useOwner from "../hooks/use-owner";
   import CreateTour from "../components/TourCreate";
-  import embedImage from "../components/EmbedImage";
   import HeroSection from "../components/Hero";
   import HeroImage from "../img/hero-band-yellow.png"
+  import { useAuth } from "../hooks/use-auth";
 
   
   function BandPage() {
-  // Here we use a hook that comes for free in react router called `useParams` to get the id from the URL so that we can pass it to our useProject hook.
-    const[displayForm, setDisplayForm] = useState(false)  
-    const showForm = () => {setDisplayForm(true)}
+    const {auth, setAuth} = useAuth();
+    const[displayForm, setDisplayForm] = useState(false);  
+    const showForm = () => {setDisplayForm(true); } 
 
     const { id } = useParams();
-  
     const { band, isLoading, error } = useBand(id);
+
+    useEffect(() => { 
+      if (band && auth.user_id) { 
+        console.log("Logged-in user ID:", auth.user_id); 
+        console.log("Band owner ID:", band.owner); 
+        console.log("Comparison result:", String(auth.user_id) === String(band.owner));
+      } 
+    }, [band, auth.user_id]);
 
     if (isLoading) {
       return (<p>loading...</p>)
@@ -24,39 +30,34 @@
     if (error) {
       return (<p>{error.message}</p>)
     }
-    // const { band, isLoading: bandLoading, error: bandError } = useBand(id)
 
-    // const userId = band ? band.owner : null;
-    // const { user, isLoading: userLoading, error: userError } = useOwner(userId);
-
-    // console.log("Fetching user within BandPage funtion with id", userId)
-  
-    // if (bandLoading || userId && userLoading) {
-    //   return(<p>loading...</p>)
-    // }
-  
-    // if (bandError) {
-    //   return (<p>{bandError.message}</p>)
-    //   }
-    // if (userError) {
-    //   return (<p>{userError.message}</p>)
-    //   }
     const homeText = {
-      title: `${band.name}`
-    }
+      title: `${band.name}`,
+      subtitle: `band details page`,
+      button: `return to all bands`
+     }
+    const allBandsLink = "/bands"
+    
+    const isBandOwner = String(auth.user_id) === String(band.owner)
 
     return (
         <div>
             <div>
-              <HeroSection backgroundImage={HeroImage} textContent={homeText}/>
+              <HeroSection backgroundImage={HeroImage} textContent={homeText} heroLink={allBandsLink}/>
             </div>
-          {/* <div className="hero">
-            <h1>{`${band.name}`}</h1>
-          </div> */}
+            <div>
+          {isBandOwner && ( 
+            <> 
+            <button type="button" onClick={showForm}> 
+            Add a new tour 
+            </button> 
+            {displayForm && <CreateTour />} 
+            </>
+          )}
+        </div>
           <div>
             <h2>About</h2>
             <p>{band.description}</p>
-            {/* <p>{user?.username}</p> */}
             <h3>Country</h3>
             <p>{band.country}</p>
             <h3>Website</h3>
@@ -64,20 +65,11 @@
             {/* <h3>Genre: {`${band.genre}`}</h3> */}
           </div>
           <div>
-          <img src={band.cover_image}
-          />
-          {/* <img src="https://1drv.ms/i/s!AkTRpRZDPOFCiQ7XS_u9Py14T-1C?embed=1&width=450&height=450"/> */}
+          <img src={band.cover_image} alt="Band Cover"/>
           </div>
-          <div className="display-form"> 
-              { !displayForm ? <button type="Display-form" onClick={showForm}>
-                Add a new tour
-            </button> : null}
-            </div>
-          <div className="contact-form">
-          {displayForm ? <CreateTour/> : null}
-          </div>
-        </div>
-    
+          <h2>Created by:</h2>
+          <p>{band.owner}</p>
+        </div>   
       );
   }
     

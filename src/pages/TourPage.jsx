@@ -4,6 +4,8 @@ import useBand from "../hooks/use-band";
 import HeroSection from "../components/Hero";
 import HeroImage from "../img/hero-red.png"
 import CreatePledge from "../components/PledgeCreate";
+import UpdateTour from "../components/TourUpdate";
+import getUser from "../api/get-user";
 // import { useEffect } from "react";
 
 
@@ -49,13 +51,15 @@ function TourPage() {
           <h3>Description</h3>
           <p>{tour.description}</p>
           <h3>Created at: {tour.date_created}</h3>
-          <h3>{`Status: ${tour.is_open}`}</h3>
+          <h3>Funding goal: ${tour.goal}</h3>
+          <h3>{`Currently accepting funding: ${tour.is_open}`}</h3>
           <h3>Pledges:</h3>
           <ul>
             {tour.pledges.map((pledgeData, key) => {
                   return (
                       <li key={key}>
-                      {pledgeData.amount} from {pledgeData.supporter}
+                      {`$${pledgeData.amount} from`} {`${pledgeData.supporter};`}
+                      {`Comment: ${pledgeData.comment}`}
                       </li>
                       );
                 })}
@@ -63,6 +67,9 @@ function TourPage() {
           <div className="contact-form">
           <CreatePledge bandId={bandId}/> 
           </div>
+          {/* <div className="contact-form">
+          <UpdateTour/> 
+          </div> */}
         </div>
         
       );
