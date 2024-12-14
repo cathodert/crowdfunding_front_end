@@ -1,9 +1,21 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import postSignup from "../api/post-signup.js";
+// import z from "zod";
 import postLogin from "../api/post-login.js";
 import "./Form.css"
-import Dropdown from "./UserDropdown.jsx";
+// import Dropdown from "./UserDropdown.jsx";
+
+// const signupSchema = z.object({
+//   username: z
+//     .string()
+//     .min(5, { message: "Username must not be empty" }),
+//   password: z
+//     .string()
+//     .min(8, { message: "Password must be at least 8 characters long" }),
+//   email: z.string().email({ message: "Email must not be empty" }),
+//   user_type:z.string().length(2, { message: "Supporter must not be empty" }),
+// });
 
 function SignupForm() {
   // const [selectedValue, setSelectedValue] = useState(''); 
@@ -21,7 +33,7 @@ function SignupForm() {
   const handleSelect = (value) => { setSelectedValue(value); };    
 
   const handleChange = (event) => {
-    console.log(event.target.name) 
+    // console.log(event.target.name) 
     const name = event.target.name;
       const value = event.target.value;
       setInputs(values => ({...values, [name]: value}))
@@ -29,19 +41,24 @@ function SignupForm() {
     
     const handleSubmit= async (event) => {
       event.preventDefault();
+      // const result = signupSchema.safeParse(inputs);
+      // if (!result.success) {
+      //   const error = result.error.errors?.[0];
+      //   if (error) {
+      //     alert(error.message);
+      //   }
       try {
           const result = await postSignup(inputs);
           console.log("Success:", result);
-          navigate("/login")
+          navigate("/")
       }   catch (error) {
           console.error("Signup failed:", error)
-      }
+      
+    
+      // console.log(inputs)    
+      }}
+    
 
-      }
-      console.log(inputs)
-        
-    
-    
       return (
     <div className="login-form">
     <form>

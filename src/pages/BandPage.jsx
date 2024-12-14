@@ -5,6 +5,7 @@
   import HeroSection from "../components/Hero";
   import HeroImage from "../img/hero-band-yellow.png"
   import { useAuth } from "../hooks/use-auth";
+  import PageNotFound from "../components/PageNotFound";
 
   
   function BandPage() {
@@ -17,9 +18,9 @@
 
     useEffect(() => { 
       if (band && auth.user_id) { 
-        console.log("Logged-in user ID:", auth.user_id); 
-        console.log("Band owner ID:", band.owner); 
-        console.log("Comparison result:", String(auth.user_id) === String(band.owner));
+        // console.log("Logged-in user ID:", auth.user_id); 
+        // console.log("Band owner ID:", band.owner); 
+        // console.log("Comparison result:", String(auth.user_id) === String(band.owner));
       } 
     }, [band, auth.user_id]);
 

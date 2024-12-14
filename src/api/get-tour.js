@@ -1,9 +1,6 @@
 async function getTour(tourId, tourData) {
     const url = `${import.meta.env.VITE_API_URL}/tours/${tourId}`;
     const response = await fetch(url, { method: "GET" });
-
-    console.log("GET URL:", url);
-    console.log("Tour Data:", tourData);
     
     if (!response.ok) {
       const fallbackError = `Error fetching tour with id ${tourId}`;

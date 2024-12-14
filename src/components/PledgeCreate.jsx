@@ -18,11 +18,10 @@ function CreatePledge (props) {
         anonymous: false,
         tour: id,
         band: props.bandId, 
-    });
-
-      
-      console.log(inputs)
-      console.table(props.bandId)
+    });    
+    //   console.log(inputs)
+    //   console.table(props.bandId)
+    
     const handleChange = (event) => {
         console.log(event.target.name)         
         const name = event.target.name;

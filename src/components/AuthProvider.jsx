@@ -12,7 +12,6 @@ export const AuthProvider = (props) => {
     token: window.localStorage.getItem("token"),
     user_id: window.localStorage.getItem("user_id")  
   });
-  console.log(props)
 
   return (
     <AuthContext.Provider value={{ auth, setAuth }}>

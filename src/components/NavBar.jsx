@@ -15,7 +15,7 @@ function NavBar() {
     setAuth({ token: null });
   };
 
-  console.log(auth)
+  // console.log(auth)
   
   return (
     <div>

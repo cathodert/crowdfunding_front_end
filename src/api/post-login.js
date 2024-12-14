@@ -25,7 +25,7 @@ async function postLogin(username, password) {
     // return await response.json();
 
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return {
       token: data.token,
       user_id: data.user_id,

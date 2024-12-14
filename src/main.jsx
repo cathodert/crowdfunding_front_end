@@ -12,9 +12,11 @@ import AllToursPage from "./pages/AllToursPage.jsx";
 import BandPage from "./pages/BandPage.jsx";
 import AllBandsPage from "./pages/AllBandsPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
+import PageNotFound from "./components/PageNotFound.jsx";
 
 import NavBar from "./components/NavBar.jsx";
 import { AuthProvider } from "./components/AuthProvider.jsx";
+
 
 // Here we create our router and tell it whats pages to render at what path
 const router = createBrowserRouter([
@@ -33,6 +35,9 @@ const router = createBrowserRouter([
         { path: "/tours", element: <AllToursPage /> },
         { path: "/tours/:id", element: <TourPage /> },
         { path: "/contact", element: <ContactPage /> },
+        { path: "/*", element: <PageNotFound /> },
+
+
       ]
   },
 ]);

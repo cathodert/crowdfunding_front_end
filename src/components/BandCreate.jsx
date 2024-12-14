@@ -17,7 +17,7 @@ function CreateBand() {
     });
         
     const handleChange = (event) => {
-        console.log(event.target.name)         
+        // console.log(event.target.name)         
         const name = event.target.name;
         const value = event.target.value
         setInputs(values => ({...values, [name]: value}))
@@ -25,13 +25,12 @@ function CreateBand() {
 
     const handleSubmit= async (event) => {
         event.preventDefault();
-        console.log("Logging token", auth.token)
+        // console.log("Logging token", auth.token)
         // TODO need to add authentication
         try {
             const result = await postBand(inputs, auth.token);
-            console.log("Success:", result);
+            // console.log("Success:", result);
             navigate(`/bands/${result.id}`)
-            // navigate("/")
         }   catch (error) {
             console.error("Create band failed:", error)
         }

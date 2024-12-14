@@ -12,13 +12,17 @@ function AllBandsPage() {
   const[displayForm, setDisplayForm] = useState(false)  
   const showForm = () => {setDisplayForm(true)}
   const homeText = {
-    title: "our bandtogethr bands"
+    title: "our community",
+    subtitle: "the bandtogethr bands",
+    button: "view tours"
   }
+  const allToursLink = "/tours"
+  
 
   return (
     <div className="main-page">
         <div>
-          <HeroSection backgroundImage={HeroImage} textContent={homeText}/>
+          <HeroSection backgroundImage={HeroImage} textContent={homeText} heroLink={allToursLink}/>
         </div>
         <div className="display-form"> 
        { !displayForm ? <button type="Display-form" onClick={showForm}>

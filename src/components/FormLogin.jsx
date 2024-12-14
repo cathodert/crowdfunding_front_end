@@ -27,7 +27,7 @@ function LoginForm() {
         event.preventDefault(); 
         if (credentials.username && credentials.password) { 
             postLogin(credentials.username, credentials.password).then((response) => { 
-                console.log(response); // Log the response to see its structure 
+                // console.log(response); // Log the response to see its structure 
                 window.localStorage.setItem("token", response.token); 
                 window.localStorage.setItem("user_id", response.user_id); 
                 window.localStorage.setItem("email", response.email); 

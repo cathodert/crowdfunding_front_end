@@ -14,13 +14,17 @@ function AllToursPage() {
   // const[displayForm, setDisplayForm] = useState(false)  
   // const showForm = () => {setDisplayForm(true)}
   const homeText = {
-    title: "our bandtogethr tours"
-  };
+    title: "what's coming up",
+    subtitle: "our bandtogethr tours",
+    button: "view bands"
+  }
+  const allBandsLink = "/bands"
+  
 
   return (
     <div className="main-page">
       <div>
-      <HeroSection backgroundImage={HeroImage} textContent={homeText}/>
+      <HeroSection backgroundImage={HeroImage} textContent={homeText} heroLink={allBandsLink}/>
       </div>
       {/* Have removed this button from site at this point. May add at some point in future if change way website set up */}
       {/* <div className="display-form"> 
@@ -38,6 +42,6 @@ function AllToursPage() {
         </div>
     </div>
    );
-  }
+}
   
   export default AllToursPage;

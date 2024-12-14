@@ -18,10 +18,6 @@ function HomePage() {
 
     return (
     <div className="homepage">
-      {/* <div className="hero">
-      <img src = "src/img/hero-yellow.png"/>
-      <h1>bandtogethr</h1>
-      </div> */}
       <div>
       <HeroSection backgroundImage={HeroImage} textContent={homeText} heroLink={allToursLink}/>
       </div>

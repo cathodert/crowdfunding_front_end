@@ -10,7 +10,7 @@ import putTour from "../api/put-tour.js";
 
 function UpdateTour() {
     const { id } = useParams();
-    const tourId = id;
+    // const tourId = id;
     const {auth, setAuth} = useAuth();
     const navigate = useNavigate();
     const [tourData, setTourData] = useState({
@@ -47,7 +47,10 @@ function UpdateTour() {
         console.log("Logging token", auth.token)
         // TODO need to add authentication
         try {
-            const result = await putTour(id, tourData, auth.token);
+            const result = await putTour(id, auth.token, tourData);
+            console.log("Tour id", id)
+            console.log("Auth token:", auth.token)
+            console.log("tour data:", tourData)
             console.log("Success:", result);
             navigate(`/tours/${id}`)
             // navigate("/")
