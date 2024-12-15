@@ -31,7 +31,7 @@ function CreateTour(props) {
         // console.log("Logging token", auth.token)
         try {
             const result = await postTour(inputs, auth.token);
-            // console.log("Success:", result);
+            console.log("Success:", result);
             navigate(`/tours/${result.id}`)
             // navigate("/")
         }   catch (error) {
@@ -41,7 +41,7 @@ function CreateTour(props) {
 
 
     return (
-        <div className="tour-form">
+        <div className="band-form">
         <form>
             <div>
                 <label htmlFor="title">Tour name:</label>
@@ -87,10 +87,11 @@ function CreateTour(props) {
                     value={inputs.image} 
                     onChange={handleChange}
                 />
-            </div>
-            <button type="submit" onClick={handleSubmit}>
+
+            <button className="button" type="submit" onClick={handleSubmit}>
                 Create Tour
             </button>
+            </div>
             </form>
 
 

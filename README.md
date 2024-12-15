@@ -16,8 +16,9 @@ Deployed backend on heroku <https://bandtogethr-e2b0af362861.herokuapp.com>
 ## Things to do
 
 - Make updates to CSS. Lots of issues.
-- Did not complete PUT functionality at this point. Was having an authorisation error with token not being recogised. I have therefore commented out this functionality so it does not appear on deployed version. 
+- Add zod (or alternative) to forms (NB was unable to import zod based on terminal prompt provided)
 - Implement appropriate error messages.
+- Did not complete PUT functionality at this point. Was having an authorisation error with token not being recogised. I have therefore commented out this functionality so it does not appear on deployed version.
 - As above - limit ability to create bands to users who select band member only.
 
 ## Screenshots
