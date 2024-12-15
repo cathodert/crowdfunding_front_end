@@ -9,7 +9,7 @@ import "../components/Form.css"
 function LoginPage() {
   const [isLogin, setIsLogin] = useState(true);
   const homeText = {
-    title: "Login or Sign up to bandtogethr"
+    title: "Login or Sign Up"
   }
  
   const toggleForm = () => {
@@ -24,8 +24,8 @@ function LoginPage() {
       <div className="fieldset"> 
       <h1>{isLogin ? "Login" : "Sign Up"}</h1>
       {isLogin ? <LoginForm /> : <SignupForm />}
-      <button onClick={toggleForm}>
-        {isLogin ? "Switch to Sign Up" : "Switch to Login"}
+      <button className="button" onClick={toggleForm}>
+        {isLogin ? "Not already a member? Sign Up" : "Back to Login"}
       </button>
     </div>
     </div>

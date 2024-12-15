@@ -4,7 +4,8 @@ import CreateBand from "../components/BandCreate";
 import { useState } from "react";
 import HeroSection from "../components/Hero";
 import HeroImage from "../img/hero-band-yellow.png"
-import "./Pages.css";
+import "../components/BandCard.css"
+import "./AllBandsTours.css";
 import "../components/Form.css"
 
 function AllBandsPage() {
@@ -24,18 +25,28 @@ function AllBandsPage() {
         <div>
           <HeroSection backgroundImage={HeroImage} textContent={homeText} heroLink={allToursLink}/>
         </div>
-        <div className="display-form"> 
-       { !displayForm ? <button type="Display-form" onClick={showForm}>
+        <div className="body-default">
+        {/* <div className="band-button">  */}
+       { !displayForm ? <button className="form-button" type="Display-form" onClick={showForm}>
                 Add a new band
             </button> : null}
-            </div>
-        <div className="contact-form">
+            {/* </div>       */}
+        {/* <div className="band-form"> 
+       { !displayForm ? <button className="button" type="Display-form" onClick={showForm}>
+                Add a new band
+            </button> : null}
+            </div> */}
+        {/* <div className="body"> */}
+        <div>
           {displayForm ? <CreateBand /> : null}
         </div>
+        <div className="body-tours-bands">
         <div id="band-list">
             {bands.map((bandData, key) => {
                 return <BandCard key={key} bandData={bandData} />;
         })}
+        </div>
+        </div>
         </div>
     </div>
    );

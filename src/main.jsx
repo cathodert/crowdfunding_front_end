@@ -16,6 +16,7 @@ import PageNotFound from "./components/PageNotFound.jsx";
 
 import NavBar from "./components/NavBar.jsx";
 import { AuthProvider } from "./components/AuthProvider.jsx";
+import NotAuthorised from "./components/Error.jsx";
 
 
 // Here we create our router and tell it whats pages to render at what path
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
         { path: "/tours", element: <AllToursPage /> },
         { path: "/tours/:id", element: <TourPage /> },
         { path: "/contact", element: <ContactPage /> },
+        { path: "/notauth", element: <NotAuthorised /> },
         { path: "/*", element: <PageNotFound /> },
 
 

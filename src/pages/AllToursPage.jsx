@@ -4,7 +4,7 @@ import CreateTour from "../components/TourCreate";
 import { useState } from "react";
 import HeroSection from "../components/Hero";
 import HeroImage from "../img/hero-blue.png"
-import "./Pages.css";
+import "./AllBandsTours.css";
 import "../components/Form.css"
 
 
@@ -35,10 +35,12 @@ function AllToursPage() {
         <div className="contact-form">
           {displayForm ? <CreateTour/> : null}
         </div> */}
+      <div className="body-default">
       <div id="tour-list">
           {tours.map((tourData, key) => {
             return <TourCard key={key} tourData={tourData} />;
           })}
+        </div>
         </div>
     </div>
    );

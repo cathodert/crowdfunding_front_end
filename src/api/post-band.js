@@ -1,3 +1,6 @@
+// import { redirect } from "react-router-dom";
+// import NotAuthorised from "../components/Error";
+
 async function postBand(inputs, token) {
     const url = `${import.meta.env.VITE_API_URL}/bands/`;
 
@@ -18,7 +21,13 @@ async function postBand(inputs, token) {
 
         ),
       });
-    
+
+      if (response.status === 401) { // Redirect to the NotAuthorised component 
+        return { error: "Not Authorised" };
+      }
+      
+
+
       if (!response.ok) {
         const fallbackError = `Error trying to create band`;
     

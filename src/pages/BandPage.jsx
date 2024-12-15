@@ -6,6 +6,10 @@
   import HeroImage from "../img/hero-band-yellow.png"
   import { useAuth } from "../hooks/use-auth";
   import PageNotFound from "../components/PageNotFound";
+  import NotAuthorised from "../components/Error";
+  import "./Pages.css"
+  import ImagePlaceholder from "../img/image-placeholder.png";
+  import ImageWithFallback from "../components/ImageError";
 
   
   function BandPage() {
@@ -28,6 +32,10 @@
       return (<p>loading...</p>)
     }
 
+    // if (response.status === 401) {
+    //  {NotAuthorised}
+    // }
+
     if (error) {
       return (<p>{error.message}</p>)
     }
@@ -42,20 +50,20 @@
     const isBandOwner = String(auth.user_id) === String(band.owner)
 
     return (
-        <div>
+        <div className="page">
             <div>
               <HeroSection backgroundImage={HeroImage} textContent={homeText} heroLink={allBandsLink}/>
             </div>
             <div>
           {isBandOwner && ( 
             <> 
-            <button type="button" onClick={showForm}> 
+            <button className="button" type="button" onClick={showForm}> 
             Add a new tour 
             </button> 
             {displayForm && <CreateTour />} 
             </>
           )}
-        </div>
+
           <div>
             <h2>About</h2>
             <p>{band.description}</p>
@@ -65,12 +73,17 @@
             <p> <a href="`{band.website}">{band.website}</a></p>
             {/* <h3>Genre: {`${band.genre}`}</h3> */}
           </div>
-          <div>
-          <img src={band.cover_image} alt="Band Cover"/>
+          <div className="band-tour">
+          <ImageWithFallback
+          src={band.cover_image}
+          alt="Band cover image"
+          placeholder={ImagePlaceholder}
+        />
           </div>
-          <h2>Created by:</h2>
-          <p>{band.owner}</p>
+          {/* <h2>Created by:</h2>
+          <p>{band.owner}</p> */}
         </div>   
+        </div>
       );
   }
     

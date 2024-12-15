@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Form.css"
 import postBand from "../api/post-band.js";
 import {useAuth} from "../hooks/use-auth.js"; 
+import NotAuthorised from "./Error.jsx";
 
 
 function CreateBand() {
@@ -15,6 +16,8 @@ function CreateBand() {
         cover_image: '',
         website: ''
     });
+    const [error, setError] = useState(null);
+
         
     const handleChange = (event) => {
         // console.log(event.target.name)         
@@ -27,18 +30,21 @@ function CreateBand() {
         event.preventDefault();
         // console.log("Logging token", auth.token)
         // TODO need to add authentication
+
         try {
             const result = await postBand(inputs, auth.token);
-            // console.log("Success:", result);
+            console.log("Message:", result);
             navigate(`/bands/${result.id}`)
         }   catch (error) {
             console.error("Create band failed:", error)
+            navigate(NotAuthorised)
         }
     }
 
 
     return (
         <div className="band-form">
+        {error === "Not Authorised" ? ( <NotAuthorised /> ) : (
         <form>
             <div>
                 <label htmlFor="name">Band name:</label>
@@ -89,7 +95,7 @@ function CreateBand() {
                 Create Band
             </button>
             </form>
-
+        )}
 
         </div>)}
 
