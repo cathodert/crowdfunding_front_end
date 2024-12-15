@@ -36,7 +36,7 @@ function CreatePledge (props) {
         try {
             const result = await postPledge(inputs, auth.token);
             console.log("Success:", result);
-            // navigate("/")
+            navigate (0)
         }   catch (error) {
             console.error("Create tour failed:", error)
         }
@@ -44,7 +44,7 @@ function CreatePledge (props) {
 
 
     return (
-        <div className="pledge-form">
+        <div className="login-form">
         <form>
             {/* <div>
                 <label htmlFor="supporter">Supporter:</label>
@@ -72,11 +72,12 @@ function CreatePledge (props) {
                     value={inputs.comment} 
                     onChange={handleChange}
                 />
-            </div>
+
             
-            <button type="submit" onClick={handleSubmit}>
+            <button className="button" type="submit" onClick={handleSubmit}>
                 Create Pledge
             </button>
+            </div>
             </form>
 
 
