@@ -26,26 +26,26 @@ As per assignment requirements:
 
 ### Home page
 
-![bandtogethr homepage] (./src/img/bandtogethr-homepage.png)
+![bandtogethr homepage](./src/img/bandtogethr-homepage.png)
 
 ### All bands page
 
-![All bands page] (./src/img/bandtogethr-all-band-page.png)
+![All bands page](./src/img/bandtogethr-all-band-page.png)
 
 ### Create band form
 
-![Create band form] (./src/img/bandtogethr-create-band-form.png)
+![Create band form](./src/img/bandtogethr-create-band-form.png)
 
 ### Band page
 
 Redirects to this page once band created
-![band page] (./src/img/bandtogethr-band-page.png)
+![band page](./src/img/bandtogethr-band-page.png)
 
 ### Create tour form
 
 Only visible to band 'owner'
-![Create tour form] (./src/img/bandtogethr-create-tour-form.png)
+![Create tour form](./src/img/bandtogethr-create-tour-form.png)
 
 ### Create pledge
 
-![Create pledge] (./src/img/bandtogethr-pledge-form.png)
+![Create pledge](./src/img/bandtogethr-pledge-form.png)
