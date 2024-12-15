@@ -1,17 +1,22 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import useTour from "../hooks/use-tour";
 import useBand from "../hooks/use-band";
 import HeroSection from "../components/Hero";
 import HeroImage from "../img/hero-red.png"
 import CreatePledge from "../components/PledgeCreate";
-import UpdateTour from "../components/TourUpdate";
-import getUser from "../api/get-user";
+// import UpdateTour from "../components/TourUpdate";
+// import getUser from "../api/get-user";
 // import { useEffect } from "react";
 
 
 
 
 function TourPage() {
+
+  const[displayForm, setDisplayForm] = useState(false)  
+  const showForm = () => {setDisplayForm(true)}
+
 // Here we use a hook that comes for free in react router called `useParams` to get the id from the URL so that we can pass it to our useProject hook.
   const { id } = useParams();
   // useProject returns three pieces of info, so we need to grab them all here
@@ -64,12 +69,19 @@ function TourPage() {
                       );
                 })}
             </ul>
-          <div className="contact-form">
-          <CreatePledge bandId={bandId}/> 
+          <div className="display-form"> 
+            { !displayForm ? <button type="Display-form" onClick={showForm}>
+                Support the tour
+            </button> : null}
           </div>
           <div className="contact-form">
+            {displayForm ? <CreatePledge bandId={bandId}/> : null}
+          </div>
+
+          {/* Could not get PUT function working */}
+          {/* <div className="contact-form">
           <UpdateTour/> 
-          </div>
+          </div> */}
         </div>
         
       );
